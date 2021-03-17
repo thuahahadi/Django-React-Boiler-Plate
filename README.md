@@ -1,17 +1,27 @@
-# Django-React-Boiler-plate
+# Django React BoilerPlate
+---
 
+# [Thuaha Hadi](https://www.facebook.com/thuaha.hadi.tohan/)
 
-# Reactjs
+---
+## Reactjs
 
+---
+
+---
+
+```javascript
 npx create-react-app .
 npm i axios
 npm i js-cookie
 npm i react-router-dom
 npm run start
 npm run build
+```
 
-# Create src/env.js
+### Create src/env.js
 
+```javascript
 import Cookies from "js-cookie";
 
 export const domain = "http://127.0.0.1:8000";
@@ -37,10 +47,15 @@ export const posttokenheader = {
   Authorization: `token ${token}`,
   "X-CSRFToken": csrftoken,
 };
-
+```
 
 # Django
 
+---
+
+---
+
+```python
 python -m venv venv
 source venv/Scripts/activate
 
@@ -53,10 +68,11 @@ pip install django-cors-headers
 pip install Pillow
 
 django-admin startproject main .
+```
 
+### Edit Django Setting.py file
 
-# Edit Django Setting.py file
-
+```python
 # Import
 from pathlib import Path
 import os
@@ -88,10 +104,11 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
 ]
 CORS_URLS_REGEX = r'^/api.*'
+```
 
+### Edit Django urls.py file
 
-# Edit Django urls.py file
-
+```python
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.views.generic import TemplateView
@@ -117,8 +134,11 @@ if not settings.DEBUG:
     urlpatterns += [
         re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
     ]
-    
- # Run Server
-  
-  python manage.py runserver
+```
+
+# Run Server
+
+```
+python manage.py runserver
 http://127.0.0.1:8000/
+```
